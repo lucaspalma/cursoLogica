@@ -1,15 +1,44 @@
 <meta charset="UTF-8">
 <script src="funcoes.js"></script>
 <script>
+function calculaIdade(diaNascimento, mesNascimento, anoNascimento) {
+	var dataHoje = new Date();
+	var diaAtual = dataHoje.getDate();
+	var mesAtual = dataHoje.getMonth();
+	var anoAtual = dataHoje.getFullYear();
+
+	var idade = anoAtual - anoNascimento;
+	if(mesAtual == mesNascimento) {
+		if(diaAtual >= diaNascimento) {
+			return idade;
+		}
+		else {
+			return idade - 1;
+		}
+	}
+	else if(mesAtual < mesNascimento) {
+		return --idade;
+	}
+	else {
+		return idade;
+	}
+}
+
 var nome = prompt("qual o seu nome?");
 var peso = devolveUmNumeroDecimal("qual o seu peso?");
 var altura = devolveUmNumeroDecimal("qual a sua altura?");
-var idade = parseInt(prompt("qual a sua idade?"));
+
+
+var diaNasci = parseInt(prompt("que dia você nasceu?"))
+var mesNasci = parseInt(prompt("que mes você nasceu?"))
+var anoNasci = parseInt(prompt("que ano você nasceu?"))
+
+
 var imc = peso / (altura * altura);
 document.write("<p>Nome: " + nome + "</p>");
 document.write("<p>Peso: " + formataGrana(peso) + " kg</p>");
 document.write("<p>Altura: " + formataGrana(altura) + " m</p>");
-document.write("<p>Idade: " + idade + " anos</p>");
+document.write("<p>Idade: " + calculaIdade(diaNasci, mesNasci, anoNasci) + " anos</p>");
 document.write("<p>IMC: " + formataGrana(imc) + "</p>");
 if(imc < 18.5) {
 	document.write("<p>magro dms</p>")
