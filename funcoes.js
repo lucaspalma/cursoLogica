@@ -8,6 +8,9 @@ function formataSaida( valor , numeroCasas ) {
 function formataGrana(valor) {
 	return formataSaida(valor, 2);
 }
+function mostra(texto) {
+    document.write("<p>" + texto + "</p>")
+}
 
 
 

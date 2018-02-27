@@ -23,16 +23,15 @@ function calculaIdade(diaNascimento, mesNascimento, anoNascimento) {
 		return idade;
 	}
 }
-
 var nome = prompt("qual o seu nome?");
 var peso = devolveUmNumeroDecimal("qual o seu peso?");
 var altura = devolveUmNumeroDecimal("qual a sua altura?");
 
-
-var diaNasci = parseInt(prompt("que dia você nasceu?"))
-var mesNasci = parseInt(prompt("que mes você nasceu?"))
-var anoNasci = parseInt(prompt("que ano você nasceu?"))
-
+var dataNasci = prompt("Qual a sua data de nascimento? Ex: dd/mm/aaaa");
+var arrayData = dataNasci.split("/");
+var diaNasci = parseInt(arrayData[0])
+var mesNasci = parseInt(arrayData[1])
+var anoNasci = parseInt(arrayData[2])
 
 var imc = peso / (altura * altura);
 document.write("<p>Nome: " + nome + "</p>");
