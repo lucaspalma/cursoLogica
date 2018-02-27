@@ -1,0 +1,17 @@
+<h1>Campeonato de Futebol</h1>
+<script src="funcoes.js"></script>
+<script>
+function calculaPontos() {
+    var nome = prompt("Qual o nome do time?");
+    var vitoria = devolveUmNumeroDecimal("Quantas vezes o " + nome + " ganhou?");
+    var derrota = devolveUmNumeroDecimal("Quantas vezes o " + nome + " perdeu?");
+    var empate = devolveUmNumeroDecimal("Quantas vezes o " + nome + " empatou?");
+    var pontos = vitoria * 3 + derrota * 0 + empate * 1;
+    return { nome: nome, resultado : pontos };
+}
+
+var time1 = calculaPontos();
+var time2 = calculaPontos();
+document.write("<p>O " + time1["nome"] + " tem " + time1["resultado"] + " pontos</p>");
+document.write("<p>O " + time2.nome + " tem " + time2.resultado + " pontos</p>");
+</script>

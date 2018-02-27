@@ -30,6 +30,7 @@ function mostra(texto) {
 
 
 
+
 function carregaCss() {
 	var head  = document.getElementsByTagName('head')[0];
     var link  = document.createElement('link');
