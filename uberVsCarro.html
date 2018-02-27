@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<h1>Uber</h1>
+<script src="funcoes.js"></script>
+<script>
+var tempoMinutos = devolveUmNumeroDecimal("qual o tempo em minutos?")
+var distancia = devolveUmNumeroDecimal("qual a distancia percorrida?")
+
+var valorBase = 2
+var precoUber = valorBase + (distancia * 1.40) + (tempoMinutos * 0.26);
+document.write("<p>Total R$ " + formataGrana(precoUber) + "</p>")
+</script>
+
+<h1>Carro</h1>
+<script>
+var precoGasolina = devolveUmNumeroDecimal("qual o preco da gasolina?")
+var consumo = devolveUmNumeroDecimal("qual o consumo do seu carro?")
+var gasolina = ( distancia * precoGasolina ) / consumo;
+var estacionamento = devolveUmNumeroDecimal("Qual o valor do estacionamento?");
+var total = gasolina + estacionamento;
+document.write("<p>Gasolina R$ "+ formataGrana(gasolina) + "</p>");
+document.write("<p>Estacionamento R$ "+formataGrana(estacionamento)+"</p>")
+document.write( "<p>Total R$ " + formataGrana(total) + "</p>" );
+</script>
