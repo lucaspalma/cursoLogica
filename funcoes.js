@@ -2,6 +2,7 @@ function devolveUmNumeroDecimal( pergunta ) {
 	var numero = parseFloat(prompt( pergunta ).replace(",", "."));
 	return numero;
 }
+
 function formataSaida( valor , numeroCasas ) {
 	return valor.toFixed(numeroCasas).replace(".", ",");
 }

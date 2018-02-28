@@ -1,0 +1,26 @@
+<button id="botaoStart">Start</button>
+<script>
+function sorteia() {
+	var numero = Math.round( Math.random() * 10 );
+	return numero;
+}
+
+function start () {
+	var numeroSorteado = sorteia();
+	var chute = parseInt(prompt("Chute um número? Tente a sorte"));
+
+	while(chute < 0 || chute > 10 || isNaN(chute)) {
+		alert("Número inválido! apenas entre 0 e 10");
+		chute = parseInt(prompt("Chute um número? Tente a sorte"));
+	}
+
+	if(chute == numeroSorteado) {
+		alert("Você acertou")
+	}
+	else {
+		alert("Você errou")	
+	}
+}
+
+botaoStart.onclick = start;
+</script>
