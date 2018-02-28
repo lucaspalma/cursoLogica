@@ -1,0 +1,15 @@
+<script>
+	Date.prototype.adicionaDias = function(dias) {
+		var novoDia = this.getDate() + dias;
+		this.setDate(novoDia);
+	}
+
+	Date.prototype.voltaDias = function(dias) {
+		var novoDia = this.getDate() - dias;
+		this.setDate(novoDia);
+	}
+
+	var semanaQueVem = new Date();
+	semanaQueVem.adicionaDias(7);
+	document.write(semanaQueVem)
+</script>

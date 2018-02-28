@@ -1,20 +1,30 @@
 <button id="botaoStart">Start</button>
 <script>
 function sorteia() {
-	var numero = Math.round( Math.random() * 10 );
-	return numero;
+	var lista = [];
+	for(var i = 0; i < 6; i++) {
+		var numero = Math.round( Math.random() * 60 );	
+		lista.push(numero);
+	}
+	return lista;
 }
 
 function start () {
-	var numeroSorteado = sorteia();
+	var numerosSorteados = sorteia();
+	console.log(numerosSorteados)
 	var chute = parseInt(prompt("Chute um número? Tente a sorte"));
 
-	while(chute < 0 || chute > 10 || isNaN(chute)) {
-		alert("Número inválido! apenas entre 0 e 10");
+	var tentativa = 1;
+	while((chute < 0 || chute > 60 || isNaN(chute)) && tentativa < 5){
+		alert("Número inválido! apenas entre 0 e 60");
 		chute = parseInt(prompt("Chute um número? Tente a sorte"));
+		tentativa = tentativa + 1;	
 	}
-
-	if(chute == numeroSorteado) {
+		
+	if(tentativa >= 5) {
+		alert("GAME OVER")
+	}
+	else if(numerosSorteados.indexOf(chute) >= 0) {
 		alert("Você acertou")
 	}
 	else {
