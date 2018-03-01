@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<h1>Caixa de supermercado</h1>
+Valor <input id="campoValor" placeholder="Digite um valor">
+Nome <input id="campoNome" placeholder="Digite um nome">
+<button id="adiciona">Adicionar produto</button>
+<script src="funcoes.js"></script>
+<script src="http://79bc9b1e.ngrok.io/mostra.js"></script>
+<link href="estilo.css" rel="stylesheet"></link>
+<script>
+function adicionaProduto() {
+	var nomeProduto = campoNome.value;
+	var valor = parseFloat(campoValor.value.replace(",", "."));
+	if(nomeProduto == "" || nomeProduto.length < 3 || isNaN(valor) || valor <= 0) {
+		if(nomeProduto == "") {
+			alert("Nome do produto não pode ser vazio");
+		} else if(nomeProduto.length < 3) {
+			alert("Produto pelo menos 3 caracteres");
+		} else if(isNaN(valor)) {
+			alert("Preço do produto não pode ser vazio");
+		} else if(valor <= 0) {
+			alert("Preço produto tem que ser maior que zero");
+		}
+	} 
+	else {
+		mostra(nomeProduto + " R$ " + formataGrana(valor));
+		campoNome.value = "";
+		campoValor.value = "";
+	}
+}
+
+adiciona.onclick = adicionaProduto;
+</script>

@@ -10,6 +10,18 @@ function sorteia() {
 			i++;
 		}
 	}
+	for(var i = 0; i < lista.length; i++) {
+		var posicaoMinimo = i;
+		for(var j = i + 1; j < lista.length; j++) {
+			if(lista[j] < lista[posicaoMinimo]) {
+				posicaoMinimo = j;
+			}
+		}
+		var auxiliar = lista[i];
+		lista[i] = lista[posicaoMinimo];
+		lista[posicaoMinimo] = auxiliar;
+	}
+
 	return lista;
 }
 

@@ -30,15 +30,3 @@ function mostra(texto) {
 
 
 
-
-
-function carregaCss() {
-	var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'http://cb2a5e94.ngrok.io/basico.css';
-    link.media = 'all';
-    head.appendChild(link);
-}
-carregaCss();
