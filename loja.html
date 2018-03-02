@@ -11,6 +11,7 @@
 	<script src="http://ad883540.ngrok.io/mostra.js"></script>
 	<link href="estilo.css" rel="stylesheet"></link>
 	<script>
+	var limite = 0;
 	function adicionaProduto() {
 		var nomeProduto = campoNome.value;
 		var valor = parseFloat(campoValor.value.replace(",", "."));
@@ -26,9 +27,15 @@
 			}
 		} 
 		else {
-			mostra(nomeProduto + " R$ " + formataGrana(valor));
-			campoNome.value = "";
-			campoValor.value = "";
+			if(limite < 10) {
+				mostra(nomeProduto + " R$ " + formataGrana(valor));
+				campoNome.value = "";
+				campoValor.value = "";
+				limite++;
+			}
+			else {
+				alert("Chegou no limite de produtos!");
+			}
 		}
 	}
 
